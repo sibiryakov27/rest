@@ -23,6 +23,6 @@ class MobileBankApiTestV5 {
           .statusCode(200)
           .contentType(ContentType.JSON)
           .body("every{ it.balance >= 0 }", is(true))
-      ;
+          .body(matchesJsonSchemaInClasspath("accounts.schema.json"));
     }
 }
